@@ -1,8 +1,7 @@
-import React from 'react';
-import DashboardPage from '@/pages/Dashboard';
+import DashboardPage from './pages/Dashboard';
 
-const App: React.FC = () => {
+function App() {
   return <DashboardPage />;
-};
+}
 
 export default App;

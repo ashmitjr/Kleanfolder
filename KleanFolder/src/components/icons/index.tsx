@@ -1,17 +1,7 @@
-import * as React from "react"
+import React from 'react';
 
-export const FolderIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    {...props}
-  >
-    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+export const FolderIcon: React.FC<{ className?: string }> = ({ className = 'w-6 h-6' }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.75A1.75 1.75 0 015.5 8h4.086a1.75 1.75 0 011.237.513l1.414 1.414a1.75 1.75 0 001.237.513H18.5a1.75 1.75 0 011.75 1.75v6.5a1.75 1.75 0 01-1.75 1.75H5.5a1.75 1.75 0 01-1.75-1.75v-8.5z" />
   </svg>
-)
+);

@@ -1,23 +1,16 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import React from 'react';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 disabled:pointer-events-none disabled:opacity-50",
-          "bg-zinc-100 text-zinc-950 hover:bg-white hover:shadow-[0_0_12px_rgba(255,255,255,0.1)] px-8 py-3",
-          className
-        )}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
-
-export { Button }
+export const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
+  return (
+    <button
+      className={`px-6 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 bg-emerald-500 text-emerald-950 hover:bg-emerald-400 active:scale-95 disabled:opacity-50 ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
